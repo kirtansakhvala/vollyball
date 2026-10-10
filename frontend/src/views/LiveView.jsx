@@ -164,26 +164,26 @@ export default function LiveView({ matchId, onBack }) {
           boxSizing: 'border-box',
           minHeight: 0
         }}>
-          {/* Synchronized Header Area: Team A Name (Increased Size) */}
+          {/* Synchronized Header Area: Team A Name (Further Increased Size) */}
           <div style={{
-            height: 'clamp(4.5rem, 11vh, 8.5rem)',
+            height: 'clamp(5.2rem, 12vh, 9.5rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(6px, 1.5vh, 18px)'
+            marginTop: 'clamp(4px, 1vh, 12px)'
           }}>
             <h1 style={{
-              fontSize: 'clamp(2.8rem, 7vw, 7rem)',
+              fontSize: 'clamp(3.2rem, 8vw, 8.2rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
-              letterSpacing: '0.03em',
+              letterSpacing: '0.02em',
               margin: '0',
               padding: '0',
               color: teamA.primary_color || '#00e5ff',
-              textShadow: `0 0 40px ${teamA.primary_color || '#00e5ff'}77`,
-              lineHeight: 1.0,
+              textShadow: `0 0 45px ${teamA.primary_color || '#00e5ff'}88`,
+              lineHeight: 0.95,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
@@ -201,7 +201,7 @@ export default function LiveView({ matchId, onBack }) {
             minHeight: 0
           }}>
             <div className="digit-score" style={{
-              fontSize: 'min(62vh, 37vw)',
+              fontSize: 'min(58vh, 35vw)',
               fontWeight: 900,
               color: '#d1d5db',
               lineHeight: 0.78,
@@ -230,26 +230,26 @@ export default function LiveView({ matchId, onBack }) {
           borderLeft: '4px solid #ffffff',
           boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)'
         }}>
-          {/* Synchronized Header Area: Team B Name (Increased Size) */}
+          {/* Synchronized Header Area: Team B Name (Further Increased Size) */}
           <div style={{
-            height: 'clamp(4.5rem, 11vh, 8.5rem)',
+            height: 'clamp(5.2rem, 12vh, 9.5rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(6px, 1.5vh, 18px)'
+            marginTop: 'clamp(4px, 1vh, 12px)'
           }}>
             <h1 style={{
-              fontSize: 'clamp(2.8rem, 7vw, 7rem)',
+              fontSize: 'clamp(3.2rem, 8vw, 8.2rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
-              letterSpacing: '0.03em',
+              letterSpacing: '0.02em',
               margin: '0',
               padding: '0',
               color: teamB.primary_color || '#ff9100',
-              textShadow: `0 0 40px ${teamB.primary_color || '#ff9100'}77`,
-              lineHeight: 1.0,
+              textShadow: `0 0 45px ${teamB.primary_color || '#ff9100'}88`,
+              lineHeight: 0.95,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
