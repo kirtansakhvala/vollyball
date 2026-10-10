@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: volleypro
+    env: python
+    buildCommand: "./render_build.sh"
+    startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port $PORT --workers 1"
+    plan: starter # Persistent disks require Starter tier or above
+    disk:
+      name: volleyball-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: SQLITE_DB_PATH
+        value: /var/data/volleyball.db
+      - key: SCORER_PIN
+        generateValue: true
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: "*"
