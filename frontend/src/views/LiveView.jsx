@@ -164,26 +164,26 @@ export default function LiveView({ matchId, onBack }) {
           boxSizing: 'border-box',
           minHeight: 0
         }}>
-          {/* Synchronized Header Area: Team A Name (Moved slightly below) */}
+          {/* Synchronized Header Area: Team A Name (Increased Size) */}
           <div style={{
-            height: 'clamp(3.5rem, 8vh, 6.5rem)',
+            height: 'clamp(4.5rem, 11vh, 8.5rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(10px, 2.5vh, 25px)'
+            marginTop: 'clamp(6px, 1.5vh, 18px)'
           }}>
             <h1 style={{
-              fontSize: 'clamp(2.2rem, 5.5vw, 5.2rem)',
+              fontSize: 'clamp(2.8rem, 7vw, 7rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.03em',
               margin: '0',
               padding: '0',
               color: teamA.primary_color || '#00e5ff',
-              textShadow: `0 0 35px ${teamA.primary_color || '#00e5ff'}66`,
-              lineHeight: 1.05,
+              textShadow: `0 0 40px ${teamA.primary_color || '#00e5ff'}77`,
+              lineHeight: 1.0,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
@@ -201,7 +201,7 @@ export default function LiveView({ matchId, onBack }) {
             minHeight: 0
           }}>
             <div className="digit-score" style={{
-              fontSize: 'min(64vh, 38vw)',
+              fontSize: 'min(62vh, 37vw)',
               fontWeight: 900,
               color: '#d1d5db',
               lineHeight: 0.78,
@@ -230,26 +230,26 @@ export default function LiveView({ matchId, onBack }) {
           borderLeft: '4px solid #ffffff',
           boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)'
         }}>
-          {/* Synchronized Header Area: Team B Name (Moved slightly below) */}
+          {/* Synchronized Header Area: Team B Name (Increased Size) */}
           <div style={{
-            height: 'clamp(3.5rem, 8vh, 6.5rem)',
+            height: 'clamp(4.5rem, 11vh, 8.5rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(10px, 2.5vh, 25px)'
+            marginTop: 'clamp(6px, 1.5vh, 18px)'
           }}>
             <h1 style={{
-              fontSize: 'clamp(2.2rem, 5.5vw, 5.2rem)',
+              fontSize: 'clamp(2.8rem, 7vw, 7rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.03em',
               margin: '0',
               padding: '0',
               color: teamB.primary_color || '#ff9100',
-              textShadow: `0 0 35px ${teamB.primary_color || '#ff9100'}66`,
-              lineHeight: 1.05,
+              textShadow: `0 0 40px ${teamB.primary_color || '#ff9100'}77`,
+              lineHeight: 1.0,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
@@ -267,7 +267,7 @@ export default function LiveView({ matchId, onBack }) {
             minHeight: 0
           }}>
             <div className="digit-score" style={{
-              fontSize: 'min(64vh, 38vw)',
+              fontSize: 'min(62vh, 37vw)',
               fontWeight: 900,
               color: '#d1d5db',
               lineHeight: 0.78,
