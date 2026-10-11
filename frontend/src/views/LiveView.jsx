@@ -181,8 +181,8 @@ export default function LiveView({ matchId, onBack }) {
               letterSpacing: '0.02em',
               margin: '0',
               padding: '0',
-              color: teamA.primary_color || '#00e5ff',
-              textShadow: `0 0 45px ${teamA.primary_color || '#00e5ff'}88`,
+              color: '#ffffff',
+              textShadow: '0 4px 20px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.3)',
               lineHeight: 0.95,
               wordBreak: 'break-word',
               maxWidth: '100%'
@@ -247,8 +247,8 @@ export default function LiveView({ matchId, onBack }) {
               letterSpacing: '0.02em',
               margin: '0',
               padding: '0',
-              color: teamB.primary_color || '#ff9100',
-              textShadow: `0 0 45px ${teamB.primary_color || '#ff9100'}88`,
+              color: '#ffffff',
+              textShadow: '0 4px 20px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.3)',
               lineHeight: 0.95,
               wordBreak: 'break-word',
               maxWidth: '100%'
