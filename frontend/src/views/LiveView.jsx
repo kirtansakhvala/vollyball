@@ -169,7 +169,7 @@ export default function LiveView({ matchId, onBack }) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: 'clamp(14px, 2.5vh, 26px) 16px 8px',
+        padding: 'clamp(12px, 2vh, 22px) 16px 8px',
         boxSizing: 'border-box'
       }}
     >
@@ -178,14 +178,14 @@ export default function LiveView({ matchId, onBack }) {
         flex: 1,
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: 'minmax(clamp(7.5rem, 19vh, 13.5rem), auto) 1fr',
+        gridTemplateRows: 'minmax(clamp(5.5rem, 14vh, 9.5rem), auto) 1fr',
         width: '100%',
         margin: '0 auto',
         padding: '0',
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* ROW 1, COL 1: Team A Name (Enlarged size, only Lemon Yellow underline below) */}
+        {/* ROW 1, COL 1: Team A Name (Decreased to balanced size) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
@@ -195,14 +195,14 @@ export default function LiveView({ matchId, onBack }) {
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            padding: 'clamp(10px, 2vh, 22px) 16px clamp(8px, 1.4vh, 16px)',
+            padding: 'clamp(6px, 1.2vh, 14px) 16px clamp(6px, 1.2vh, 12px)',
             boxSizing: 'border-box',
             cursor: 'pointer',
             overflow: 'visible'
           }}
         >
           <h1 style={{
-            fontSize: 'clamp(4.2rem, 11vw, 11.2rem)',
+            fontSize: 'clamp(2.5rem, 6.5vw, 6.5rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             letterSpacing: '0.02em',
@@ -211,10 +211,10 @@ export default function LiveView({ matchId, onBack }) {
             color: '#FAFF00',
             textDecoration: 'underline',
             textDecorationColor: '#FAFF00',
-            textDecorationThickness: 'clamp(5px, 0.8vw, 10px)',
-            textUnderlineOffset: 'clamp(10px, 1.8vh, 18px)',
+            textDecorationThickness: 'clamp(3px, 0.5vw, 6px)',
+            textUnderlineOffset: 'clamp(6px, 1.2vh, 12px)',
             textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             wordBreak: 'break-word',
             maxWidth: '100%'
           }}>
@@ -222,7 +222,7 @@ export default function LiveView({ matchId, onBack }) {
           </h1>
         </div>
 
-        {/* ROW 1, COL 2: Team B Name (Enlarged size, only Lemon Yellow underline below, NO white line nearby) */}
+        {/* ROW 1, COL 2: Team B Name (Decreased to balanced size, only yellow underline below) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -232,14 +232,14 @@ export default function LiveView({ matchId, onBack }) {
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            padding: 'clamp(10px, 2vh, 22px) 16px clamp(8px, 1.4vh, 16px)',
+            padding: 'clamp(6px, 1.2vh, 14px) 16px clamp(6px, 1.2vh, 12px)',
             boxSizing: 'border-box',
             cursor: 'pointer',
             overflow: 'visible'
           }}
         >
           <h1 style={{
-            fontSize: 'clamp(4.2rem, 11vw, 11.2rem)',
+            fontSize: 'clamp(2.5rem, 6.5vw, 6.5rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             letterSpacing: '0.02em',
@@ -248,10 +248,10 @@ export default function LiveView({ matchId, onBack }) {
             color: '#FAFF00',
             textDecoration: 'underline',
             textDecorationColor: '#FAFF00',
-            textDecorationThickness: 'clamp(5px, 0.8vw, 10px)',
-            textUnderlineOffset: 'clamp(10px, 1.8vh, 18px)',
+            textDecorationThickness: 'clamp(3px, 0.5vw, 6px)',
+            textUnderlineOffset: 'clamp(6px, 1.2vh, 12px)',
             textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             wordBreak: 'break-word',
             maxWidth: '100%'
           }}>
@@ -277,7 +277,7 @@ export default function LiveView({ matchId, onBack }) {
           <div 
             className={`digit-score ${pointAnimTeam === 'team_a' ? 'point-pop-active' : ''}`}
             style={{
-              fontSize: 'min(55vh, 34vw)',
+              fontSize: 'min(58vh, 36vw)',
               fontWeight: 900,
               color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
                 ? POINT_COLOR
@@ -309,7 +309,7 @@ export default function LiveView({ matchId, onBack }) {
             position: 'relative'
           }}
         >
-          {/* Solid White Center Line between scores (starts safely below team names, does not touch team names) */}
+          {/* Solid White Center Line between scores */}
           <div style={{
             position: 'absolute',
             left: 0,
@@ -325,7 +325,7 @@ export default function LiveView({ matchId, onBack }) {
           <div 
             className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
             style={{
-              fontSize: 'min(55vh, 34vw)',
+              fontSize: 'min(58vh, 36vw)',
               fontWeight: 900,
               color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
                 ? POINT_COLOR
