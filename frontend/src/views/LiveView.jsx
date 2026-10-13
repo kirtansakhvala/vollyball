@@ -173,7 +173,7 @@ export default function LiveView({ matchId, onBack }) {
         boxSizing: 'border-box'
       }}
     >
-      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names (no dividing line), Row 2 = Scores (exact same level with center divider) */}
+      {/* Synchronized 2x2 Stadium Grid */}
       <div style={{
         flex: 1,
         display: 'grid',
@@ -185,7 +185,7 @@ export default function LiveView({ matchId, onBack }) {
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* ROW 1, COL 1: Team A Name (Enlarged size, protected from cutting) */}
+        {/* ROW 1, COL 1: Team A Name (Enlarged size, only Lemon Yellow underline below) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
@@ -222,7 +222,7 @@ export default function LiveView({ matchId, onBack }) {
           </h1>
         </div>
 
-        {/* ROW 1, COL 2: Team B Name (Enlarged size, NO white line on the left) */}
+        {/* ROW 1, COL 2: Team B Name (Enlarged size, only Lemon Yellow underline below, NO white line nearby) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -293,7 +293,7 @@ export default function LiveView({ matchId, onBack }) {
           </div>
         </div>
 
-        {/* ROW 2, COL 2: Team B Score (Exact Same Vertical Level with White Center Divider between scores) */}
+        {/* ROW 2, COL 2: Team B Score (Solid White Center Line situated between scores with clearance from team name) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -306,10 +306,22 @@ export default function LiveView({ matchId, onBack }) {
             cursor: 'pointer',
             padding: '0 16px clamp(6px, 1.5vh, 16px)',
             boxSizing: 'border-box',
-            borderLeft: '4px solid #ffffff',
-            boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)'
+            position: 'relative'
           }}
         >
+          {/* Solid White Center Line between scores (starts safely below team names, does not touch team names) */}
+          <div style={{
+            position: 'absolute',
+            left: 0,
+            top: '8%',
+            bottom: '8%',
+            width: '4px',
+            backgroundColor: '#ffffff',
+            boxShadow: '0 0 16px rgba(255, 255, 255, 0.3)',
+            borderRadius: '2px',
+            pointerEvents: 'none'
+          }} />
+
           <div 
             className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
             style={{
