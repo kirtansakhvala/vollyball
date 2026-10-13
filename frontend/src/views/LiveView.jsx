@@ -169,7 +169,7 @@ export default function LiveView({ matchId, onBack }) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: '12px 16px 8px',
+        padding: '10px 16px 8px',
         boxSizing: 'border-box'
       }}
     >
@@ -184,7 +184,7 @@ export default function LiveView({ matchId, onBack }) {
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* Left Side: Team A (Topmost Name + Centered Score) */}
+        {/* Left Side: Team A (Topmost Name + Score Down Slightly) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
@@ -200,19 +200,21 @@ export default function LiveView({ matchId, onBack }) {
             cursor: 'pointer'
           }}
         >
-          {/* Synchronized Header Area: Team A Name (Lemon Yellow with Underline) */}
+          {/* Synchronized Header Area: Team A Name (Enlarged with safe line-height to prevent clipping) */}
           <div style={{
-            height: 'clamp(5.2rem, 12vh, 9.5rem)',
+            minHeight: 'clamp(6rem, 15vh, 11rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(4px, 1vh, 12px)',
+            marginTop: 'clamp(2px, 0.8vh, 10px)',
+            padding: '0 10px clamp(6px, 1.2vh, 14px)',
+            boxSizing: 'border-box',
             overflow: 'visible'
           }}>
             <h1 style={{
-              fontSize: 'clamp(3.2rem, 8vw, 8.2rem)',
+              fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
               letterSpacing: '0.02em',
@@ -221,10 +223,10 @@ export default function LiveView({ matchId, onBack }) {
               color: '#FAFF00',
               textDecoration: 'underline',
               textDecorationColor: '#FAFF00',
-              textDecorationThickness: 'clamp(4px, 0.6vw, 8px)',
-              textUnderlineOffset: 'clamp(8px, 1.4vh, 14px)',
+              textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
+              textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
               textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-              lineHeight: 0.95,
+              lineHeight: 1.05,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
@@ -232,24 +234,26 @@ export default function LiveView({ matchId, onBack }) {
             </h1>
           </div>
 
-          {/* Exactly Centered Team A Score on Same Level */}
+          {/* Team A Score - Shifted Down Slightly */}
           <div style={{
             flex: 1,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
-            minHeight: 0
+            minHeight: 0,
+            marginTop: 'clamp(10px, 2.5vh, 28px)',
+            marginBottom: 'clamp(6px, 1.5vh, 16px)'
           }}>
             <div 
               className={`digit-score ${pointAnimTeam === 'team_a' ? 'point-pop-active' : ''}`}
               style={{
-                fontSize: 'min(62vh, 37vw)',
+                fontSize: 'min(56vh, 35vw)',
                 fontWeight: 900,
                 color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
                   ? POINT_COLOR
                   : '#d1d5db',
-                lineHeight: 0.78,
+                lineHeight: 0.82,
                 letterSpacing: '-0.04em',
                 textShadow: '0 4px 16px rgba(0,0,0,0.6)',
                 transition: 'color 0.4s ease',
@@ -261,7 +265,7 @@ export default function LiveView({ matchId, onBack }) {
           </div>
         </div>
 
-        {/* Right Side: Team B (Topmost Name + Centered Score) with Solid White Center Line */}
+        {/* Right Side: Team B (Topmost Name + Score Down Slightly) with Solid White Center Line */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -279,19 +283,21 @@ export default function LiveView({ matchId, onBack }) {
             cursor: 'pointer'
           }}
         >
-          {/* Synchronized Header Area: Team B Name (Lemon Yellow with Underline) */}
+          {/* Synchronized Header Area: Team B Name (Enlarged with safe line-height to prevent clipping) */}
           <div style={{
-            height: 'clamp(5.2rem, 12vh, 9.5rem)',
+            minHeight: 'clamp(6rem, 15vh, 11rem)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             flexShrink: 0,
-            marginTop: 'clamp(4px, 1vh, 12px)',
+            marginTop: 'clamp(2px, 0.8vh, 10px)',
+            padding: '0 10px clamp(6px, 1.2vh, 14px)',
+            boxSizing: 'border-box',
             overflow: 'visible'
           }}>
             <h1 style={{
-              fontSize: 'clamp(3.2rem, 8vw, 8.2rem)',
+              fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
               fontWeight: 900,
               textTransform: 'uppercase',
               letterSpacing: '0.02em',
@@ -300,10 +306,10 @@ export default function LiveView({ matchId, onBack }) {
               color: '#FAFF00',
               textDecoration: 'underline',
               textDecorationColor: '#FAFF00',
-              textDecorationThickness: 'clamp(4px, 0.6vw, 8px)',
-              textUnderlineOffset: 'clamp(8px, 1.4vh, 14px)',
+              textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
+              textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
               textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-              lineHeight: 0.95,
+              lineHeight: 1.05,
               wordBreak: 'break-word',
               maxWidth: '100%'
             }}>
@@ -311,24 +317,26 @@ export default function LiveView({ matchId, onBack }) {
             </h1>
           </div>
 
-          {/* Exactly Centered Team B Score on Same Level */}
+          {/* Team B Score - Shifted Down Slightly */}
           <div style={{
             flex: 1,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
-            minHeight: 0
+            minHeight: 0,
+            marginTop: 'clamp(10px, 2.5vh, 28px)',
+            marginBottom: 'clamp(6px, 1.5vh, 16px)'
           }}>
             <div 
               className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
               style={{
-                fontSize: 'min(62vh, 37vw)',
+                fontSize: 'min(56vh, 35vw)',
                 fontWeight: 900,
                 color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
                   ? POINT_COLOR
                   : '#d1d5db',
-                lineHeight: 0.78,
+                lineHeight: 0.82,
                 letterSpacing: '-0.04em',
                 textShadow: '0 4px 16px rgba(0,0,0,0.6)',
                 transition: 'color 0.4s ease',
