@@ -173,178 +173,161 @@ export default function LiveView({ matchId, onBack }) {
         boxSizing: 'border-box'
       }}
     >
-      {/* Main Two-Side Big Stadium Display with White Center Divider Line */}
+      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names, Row 2 = Scores (guarantees scores are on exact same level) */}
       <div style={{
         flex: 1,
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
+        gridTemplateRows: 'minmax(clamp(6rem, 16vh, 11rem), auto) 1fr',
         width: '100%',
         margin: '0 auto',
         padding: '0',
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* Left Side: Team A (Topmost Name + Score Down Slightly) */}
+        {/* ROW 1, COL 1: Team A Name */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             textAlign: 'center',
+            width: '100%',
             height: '100%',
-            padding: '0 16px',
+            padding: 'clamp(2px, 0.8vh, 8px) 16px clamp(6px, 1.2vh, 14px)',
             boxSizing: 'border-box',
-            minHeight: 0,
-            cursor: 'pointer'
+            cursor: 'pointer',
+            overflow: 'visible'
           }}
         >
-          {/* Synchronized Header Area: Team A Name (Enlarged with safe line-height to prevent clipping) */}
-          <div style={{
-            minHeight: 'clamp(6rem, 15vh, 11rem)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            flexShrink: 0,
-            marginTop: 'clamp(2px, 0.8vh, 10px)',
-            padding: '0 10px clamp(6px, 1.2vh, 14px)',
-            boxSizing: 'border-box',
-            overflow: 'visible'
+          <h1 style={{
+            fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
+            fontWeight: 900,
+            textTransform: 'uppercase',
+            letterSpacing: '0.02em',
+            margin: '0',
+            padding: '0',
+            color: '#FAFF00',
+            textDecoration: 'underline',
+            textDecorationColor: '#FAFF00',
+            textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
+            textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
+            textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
+            lineHeight: 1.05,
+            wordBreak: 'break-word',
+            maxWidth: '100%'
           }}>
-            <h1 style={{
-              fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
-              fontWeight: 900,
-              textTransform: 'uppercase',
-              letterSpacing: '0.02em',
-              margin: '0',
-              padding: '0',
-              color: '#FAFF00',
-              textDecoration: 'underline',
-              textDecorationColor: '#FAFF00',
-              textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
-              textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-              lineHeight: 1.05,
-              wordBreak: 'break-word',
-              maxWidth: '100%'
-            }}>
-              {teamA.name}
-            </h1>
-          </div>
-
-          {/* Team A Score - Shifted Down Slightly */}
-          <div style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            minHeight: 0,
-            marginTop: 'clamp(10px, 2.5vh, 28px)',
-            marginBottom: 'clamp(6px, 1.5vh, 16px)'
-          }}>
-            <div 
-              className={`digit-score ${pointAnimTeam === 'team_a' ? 'point-pop-active' : ''}`}
-              style={{
-                fontSize: 'min(56vh, 35vw)',
-                fontWeight: 900,
-                color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
-                  ? POINT_COLOR
-                  : '#d1d5db',
-                lineHeight: 0.82,
-                letterSpacing: '-0.04em',
-                textShadow: '0 4px 16px rgba(0,0,0,0.6)',
-                transition: 'color 0.4s ease',
-                userSelect: 'none'
-              }}
-            >
-              {currentSet.team_a_score}
-            </div>
-          </div>
+            {teamA.name}
+          </h1>
         </div>
 
-        {/* Right Side: Team B (Topmost Name + Score Down Slightly) with Solid White Center Line */}
+        {/* ROW 1, COL 2: Team B Name (with White Center Divider) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-start',
+            justifyContent: 'center',
             textAlign: 'center',
+            width: '100%',
             height: '100%',
-            padding: '0 16px',
+            padding: 'clamp(2px, 0.8vh, 8px) 16px clamp(6px, 1.2vh, 14px)',
             boxSizing: 'border-box',
-            minHeight: 0,
             borderLeft: '4px solid #ffffff',
             boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            overflow: 'visible'
           }}
         >
-          {/* Synchronized Header Area: Team B Name (Enlarged with safe line-height to prevent clipping) */}
-          <div style={{
-            minHeight: 'clamp(6rem, 15vh, 11rem)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            flexShrink: 0,
-            marginTop: 'clamp(2px, 0.8vh, 10px)',
-            padding: '0 10px clamp(6px, 1.2vh, 14px)',
-            boxSizing: 'border-box',
-            overflow: 'visible'
+          <h1 style={{
+            fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
+            fontWeight: 900,
+            textTransform: 'uppercase',
+            letterSpacing: '0.02em',
+            margin: '0',
+            padding: '0',
+            color: '#FAFF00',
+            textDecoration: 'underline',
+            textDecorationColor: '#FAFF00',
+            textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
+            textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
+            textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
+            lineHeight: 1.05,
+            wordBreak: 'break-word',
+            maxWidth: '100%'
           }}>
-            <h1 style={{
-              fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
-              fontWeight: 900,
-              textTransform: 'uppercase',
-              letterSpacing: '0.02em',
-              margin: '0',
-              padding: '0',
-              color: '#FAFF00',
-              textDecoration: 'underline',
-              textDecorationColor: '#FAFF00',
-              textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
-              textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
-              lineHeight: 1.05,
-              wordBreak: 'break-word',
-              maxWidth: '100%'
-            }}>
-              {teamB.name}
-            </h1>
-          </div>
+            {teamB.name}
+          </h1>
+        </div>
 
-          {/* Team B Score - Shifted Down Slightly */}
-          <div style={{
-            flex: 1,
+        {/* ROW 2, COL 1: Team A Score (Exact Same Vertical Level as Team B) */}
+        <div 
+          onClick={(e) => handleTeamScoreClick(e, 'team_a')}
+          style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
+            height: '100%',
             minHeight: 0,
-            marginTop: 'clamp(10px, 2.5vh, 28px)',
-            marginBottom: 'clamp(6px, 1.5vh, 16px)'
-          }}>
-            <div 
-              className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
-              style={{
-                fontSize: 'min(56vh, 35vw)',
-                fontWeight: 900,
-                color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
-                  ? POINT_COLOR
-                  : '#d1d5db',
-                lineHeight: 0.82,
-                letterSpacing: '-0.04em',
-                textShadow: '0 4px 16px rgba(0,0,0,0.6)',
-                transition: 'color 0.4s ease',
-                userSelect: 'none'
-              }}
-            >
-              {currentSet.team_b_score}
-            </div>
+            cursor: 'pointer',
+            padding: '0 16px clamp(6px, 1.5vh, 16px)',
+            boxSizing: 'border-box'
+          }}
+        >
+          <div 
+            className={`digit-score ${pointAnimTeam === 'team_a' ? 'point-pop-active' : ''}`}
+            style={{
+              fontSize: 'min(56vh, 35vw)',
+              fontWeight: 900,
+              color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
+                ? POINT_COLOR
+                : '#d1d5db',
+              lineHeight: 0.82,
+              letterSpacing: '-0.04em',
+              textShadow: '0 4px 16px rgba(0,0,0,0.6)',
+              transition: 'color 0.4s ease',
+              userSelect: 'none'
+            }}
+          >
+            {currentSet.team_a_score}
+          </div>
+        </div>
+
+        {/* ROW 2, COL 2: Team B Score (Exact Same Vertical Level with White Center Divider) */}
+        <div 
+          onClick={(e) => handleTeamScoreClick(e, 'team_b')}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%',
+            minHeight: 0,
+            cursor: 'pointer',
+            padding: '0 16px clamp(6px, 1.5vh, 16px)',
+            boxSizing: 'border-box',
+            borderLeft: '4px solid #ffffff',
+            boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)'
+          }}
+        >
+          <div 
+            className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
+            style={{
+              fontSize: 'min(56vh, 35vw)',
+              fontWeight: 900,
+              color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
+                ? POINT_COLOR
+                : '#d1d5db',
+              lineHeight: 0.82,
+              letterSpacing: '-0.04em',
+              textShadow: '0 4px 16px rgba(0,0,0,0.6)',
+              transition: 'color 0.4s ease',
+              userSelect: 'none'
+            }}
+          >
+            {currentSet.team_b_score}
           </div>
         </div>
       </div>
