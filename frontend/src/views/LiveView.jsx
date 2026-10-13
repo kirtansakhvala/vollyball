@@ -3,7 +3,8 @@ import { Activity } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { apiRequest, createMatchWebSocket } from '../api';
 
-const POINT_COLOR = 'rgba(133, 175, 228, 1)'; // Hex: #85AFE4
+const DEFAULT_SCORE_COLOR = '#ffffff'; // Hex: #FFFFFF (Pure White)
+const POINT_COLOR = 'rgba(216, 226, 146, 1)'; // Hex: #D8E292 (Active Point/Click Color)
 
 export default function LiveView({ matchId, onBack }) {
   const [match, setMatch] = useState(null);
@@ -281,7 +282,7 @@ export default function LiveView({ matchId, onBack }) {
               fontWeight: 900,
               color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
                 ? POINT_COLOR
-                : '#d1d5db',
+                : DEFAULT_SCORE_COLOR,
               lineHeight: 0.82,
               letterSpacing: '-0.04em',
               textShadow: '0 4px 16px rgba(0,0,0,0.6)',
@@ -329,7 +330,7 @@ export default function LiveView({ matchId, onBack }) {
               fontWeight: 900,
               color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
                 ? POINT_COLOR
-                : '#d1d5db',
+                : DEFAULT_SCORE_COLOR,
               lineHeight: 0.82,
               letterSpacing: '-0.04em',
               textShadow: '0 4px 16px rgba(0,0,0,0.6)',
