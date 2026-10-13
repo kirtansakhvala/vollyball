@@ -169,23 +169,23 @@ export default function LiveView({ matchId, onBack }) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: '10px 16px 8px',
+        padding: 'clamp(14px, 2.5vh, 26px) 16px 8px',
         boxSizing: 'border-box'
       }}
     >
-      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names, Row 2 = Scores (guarantees scores are on exact same level) */}
+      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names (shifted down slightly), Row 2 = Scores (exact same level) */}
       <div style={{
         flex: 1,
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: 'minmax(clamp(6rem, 16vh, 11rem), auto) 1fr',
+        gridTemplateRows: 'minmax(clamp(6.8rem, 17vh, 12rem), auto) 1fr',
         width: '100%',
         margin: '0 auto',
         padding: '0',
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* ROW 1, COL 1: Team A Name */}
+        {/* ROW 1, COL 1: Team A Name (shifted down slightly) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
@@ -195,7 +195,7 @@ export default function LiveView({ matchId, onBack }) {
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            padding: 'clamp(2px, 0.8vh, 8px) 16px clamp(6px, 1.2vh, 14px)',
+            padding: 'clamp(10px, 2vh, 22px) 16px clamp(8px, 1.4vh, 16px)',
             boxSizing: 'border-box',
             cursor: 'pointer',
             overflow: 'visible'
@@ -222,7 +222,7 @@ export default function LiveView({ matchId, onBack }) {
           </h1>
         </div>
 
-        {/* ROW 1, COL 2: Team B Name (with White Center Divider) */}
+        {/* ROW 1, COL 2: Team B Name (shifted down slightly, with White Center Divider) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -232,7 +232,7 @@ export default function LiveView({ matchId, onBack }) {
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            padding: 'clamp(2px, 0.8vh, 8px) 16px clamp(6px, 1.2vh, 14px)',
+            padding: 'clamp(10px, 2vh, 22px) 16px clamp(8px, 1.4vh, 16px)',
             boxSizing: 'border-box',
             borderLeft: '4px solid #ffffff',
             boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)',
