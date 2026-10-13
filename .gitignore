@@ -36,3 +36,10 @@ frontend/.pnp.js
 .idea/
 *.swp
 *.swo
+
+# Local SQLite databases
+data/
+*.db
+*.db-shm
+*.db-wal
+
