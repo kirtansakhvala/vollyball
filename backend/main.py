@@ -120,7 +120,16 @@ if os.path.exists(frontend_dist_path):
         
         index_file = os.path.join(frontend_dist_path, "index.html")
         if os.path.exists(index_file):
-            return FileResponse(index_file, media_type="text/html", headers={"Content-Type": "text/html; charset=utf-8"})
+            return FileResponse(
+                index_file, 
+                media_type="text/html", 
+                headers={
+                    "Content-Type": "text/html; charset=utf-8",
+                    "Cache-Control": "no-cache, no-store, must-revalidate",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
+                }
+            )
         return {"message": "VolleyPro API is running. Frontend build not found."}
 
 if __name__ == "__main__":
