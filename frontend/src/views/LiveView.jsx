@@ -173,19 +173,19 @@ export default function LiveView({ matchId, onBack }) {
         boxSizing: 'border-box'
       }}
     >
-      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names (shifted down slightly), Row 2 = Scores (exact same level) */}
+      {/* Synchronized 2x2 Stadium Grid: Row 1 = Names (no dividing line), Row 2 = Scores (exact same level with center divider) */}
       <div style={{
         flex: 1,
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: 'minmax(clamp(6.8rem, 17vh, 12rem), auto) 1fr',
+        gridTemplateRows: 'minmax(clamp(7.5rem, 19vh, 13.5rem), auto) 1fr',
         width: '100%',
         margin: '0 auto',
         padding: '0',
         boxSizing: 'border-box',
         minHeight: 0
       }}>
-        {/* ROW 1, COL 1: Team A Name (shifted down slightly) */}
+        {/* ROW 1, COL 1: Team A Name (Enlarged size, protected from cutting) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_a')}
           style={{
@@ -202,7 +202,7 @@ export default function LiveView({ matchId, onBack }) {
           }}
         >
           <h1 style={{
-            fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
+            fontSize: 'clamp(4.2rem, 11vw, 11.2rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             letterSpacing: '0.02em',
@@ -211,8 +211,8 @@ export default function LiveView({ matchId, onBack }) {
             color: '#FAFF00',
             textDecoration: 'underline',
             textDecorationColor: '#FAFF00',
-            textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
-            textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
+            textDecorationThickness: 'clamp(5px, 0.8vw, 10px)',
+            textUnderlineOffset: 'clamp(10px, 1.8vh, 18px)',
             textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
             lineHeight: 1.05,
             wordBreak: 'break-word',
@@ -222,7 +222,7 @@ export default function LiveView({ matchId, onBack }) {
           </h1>
         </div>
 
-        {/* ROW 1, COL 2: Team B Name (shifted down slightly, with White Center Divider) */}
+        {/* ROW 1, COL 2: Team B Name (Enlarged size, NO white line on the left) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -234,14 +234,12 @@ export default function LiveView({ matchId, onBack }) {
             height: '100%',
             padding: 'clamp(10px, 2vh, 22px) 16px clamp(8px, 1.4vh, 16px)',
             boxSizing: 'border-box',
-            borderLeft: '4px solid #ffffff',
-            boxShadow: '-2px 0 15px rgba(255, 255, 255, 0.25)',
             cursor: 'pointer',
             overflow: 'visible'
           }}
         >
           <h1 style={{
-            fontSize: 'clamp(3.6rem, 9.2vw, 9.2rem)',
+            fontSize: 'clamp(4.2rem, 11vw, 11.2rem)',
             fontWeight: 900,
             textTransform: 'uppercase',
             letterSpacing: '0.02em',
@@ -250,8 +248,8 @@ export default function LiveView({ matchId, onBack }) {
             color: '#FAFF00',
             textDecoration: 'underline',
             textDecorationColor: '#FAFF00',
-            textDecorationThickness: 'clamp(4px, 0.7vw, 8px)',
-            textUnderlineOffset: 'clamp(8px, 1.5vh, 16px)',
+            textDecorationThickness: 'clamp(5px, 0.8vw, 10px)',
+            textUnderlineOffset: 'clamp(10px, 1.8vh, 18px)',
             textShadow: '0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(250, 255, 0, 0.4)',
             lineHeight: 1.05,
             wordBreak: 'break-word',
@@ -279,7 +277,7 @@ export default function LiveView({ matchId, onBack }) {
           <div 
             className={`digit-score ${pointAnimTeam === 'team_a' ? 'point-pop-active' : ''}`}
             style={{
-              fontSize: 'min(56vh, 35vw)',
+              fontSize: 'min(55vh, 34vw)',
               fontWeight: 900,
               color: (activePointTeam === 'team_a' || pointAnimTeam === 'team_a')
                 ? POINT_COLOR
@@ -295,7 +293,7 @@ export default function LiveView({ matchId, onBack }) {
           </div>
         </div>
 
-        {/* ROW 2, COL 2: Team B Score (Exact Same Vertical Level with White Center Divider) */}
+        {/* ROW 2, COL 2: Team B Score (Exact Same Vertical Level with White Center Divider between scores) */}
         <div 
           onClick={(e) => handleTeamScoreClick(e, 'team_b')}
           style={{
@@ -315,7 +313,7 @@ export default function LiveView({ matchId, onBack }) {
           <div 
             className={`digit-score ${pointAnimTeam === 'team_b' ? 'point-pop-active' : ''}`}
             style={{
-              fontSize: 'min(56vh, 35vw)',
+              fontSize: 'min(55vh, 34vw)',
               fontWeight: 900,
               color: (activePointTeam === 'team_b' || pointAnimTeam === 'team_b')
                 ? POINT_COLOR
